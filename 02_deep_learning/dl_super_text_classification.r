@@ -31,7 +31,7 @@ library(gsubfn)
 
 data4 = data.frame(read.csv("./data/text.csv"))
 text = c(lapply(data4[,1], as.character))
-data.text = text
+data.text = text[1:100]
 data.text = tolower(data.text)
 data.text = tm::removeWords(data.text, stopwords("SMART"))
 data.text = iconv(data.text, "latin1", "ASCII", sub = " ")
@@ -77,15 +77,15 @@ tokenizer %>%
 
 tokenizer$document_count
 
-head(tokenizer$word_counts)
+#head(tokenizer$word_counts[1])
 
 
 text_seqs <- texts_to_sequences(tokenizer, data4$text)
 
-text_seqs %>%
-  head()
+#text_seqs %>%
+#  head()
 
-str(text_seqs)
+#str(text_seqs)
 
 n4 = length(text_seqs)
 n5 = length(data4$class)

@@ -37,6 +37,7 @@ end <- as.Date(Sys.Date())
 getSymbols("GOOG", src = "yahoo", from = start, to = end)
 data = data.frame(GOOG)
 data = data.frame(data[,-c(4)], GOOG.Close = data[,4])
+
 N = nrow(data)
 Ind = sample(N, N*1, replace = FALSE) 
 p = ncol(data)

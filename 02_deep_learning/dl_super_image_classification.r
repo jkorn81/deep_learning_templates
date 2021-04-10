@@ -96,7 +96,7 @@ valid_samples <- valid_image_array_gen$n
 valid_samples
 
 # define batch size and number of epochs
-batch_size <- 50
+batch_size <- 2
 epochs <- 10
 filters <- 128
 
