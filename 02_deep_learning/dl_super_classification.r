@@ -33,7 +33,7 @@ PDDM.uci = PDDM.uci[,-c(1)]
 PDDM.uci = data.frame(apply(PDDM.uci, 2, as.numeric))
 data = data.frame(PDDM.uci[,-c(17)])
 status = as.factor(PDDM.uci$status)
-data = data.frame(cbind(df, status))
+data = data.frame(cbind(data, status))
 N = length(nrow(data))
 Ind = sample(N, N*1, replace = FALSE) 
 p = ncol(data)
